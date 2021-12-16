@@ -1,16 +1,20 @@
 Для запуска тестов : 
 --------------------
-В PyCharm:
+- клонировать проект в PyCharm
 - установить интерпретатор Python (3.9), создать venv
 - установить необходимые зависимости из requirenments.txt
 - запускать тесты из папки TESTS
+
 или
+
 - запуск на CI (командная строка):
     
     $ python<3.x> -m pytest <имя файла с тестами>
 
 Пример:
+
     $ python -m pytest test_1_print_ip_addresses.py
+
     $ python -m pytest test_2_check_ip_addresses.py
 
 
