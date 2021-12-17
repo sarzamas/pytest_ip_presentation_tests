@@ -87,7 +87,7 @@ def read_ip_pool(file_path: str) -> list:
     """
     Метод чтения содержимого файла построчно с выдачей содержимого списком
     :type file_path: str
-    :param file_path: имя файла с тестовыми данными в UTF-8
+    :param file_path: путь к файлу с тестовыми данными в UTF-8
     :return: list
     """
     lines = ip_pool = []
