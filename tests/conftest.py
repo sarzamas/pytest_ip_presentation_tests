@@ -82,16 +82,16 @@ def create_ip_pool(assets_dir_path: str) -> list:
     return flatten(ip_pool)
 
 
-def read_ip_pool(filename: str) -> list:
+def read_ip_pool(file_path: str) -> list:
     """
     Метод чтения содержимого файла построчно с выдачей содержимого списком
-    :type filename: str
-    :param filename: имя файла с тестовыми данными в UTF-8
+    :type file_path: str
+    :param file_path: имя файла с тестовыми данными в UTF-8
     :return: list
     """
     lines = ip_pool = []
     try:
-        with open(filename, "rt", encoding="utf-8") as file:
+        with open(file_path, "rt", encoding="utf-8") as file:
             lines = file.read().splitlines()
     except UnicodeDecodeError:
         pass
