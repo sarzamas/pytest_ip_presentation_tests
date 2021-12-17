@@ -162,11 +162,11 @@ def flatten(list_of_lists: list) -> list:
     return flattened
 
 
-def create_origin_objects(work_dir_path: str, ip_pool: list):
+def create_origin_objects(work_dir_path: str, ip_pool: list) -> list:
     """
     Метод создания исходных объектов с необходимыми для тестов атрибутами
     :param work_dir_path: абсолютный путь к директории с файлами объектов
-    :param ip_pool: абсолютный путь к директори
+    :param ip_pool: list список IPv4 адресов, для каждого из которых будет создан объект
     :return: origin_objects: list список объектов c исходными данными после их предварительной подготовки
     """
     origin_objects = []
