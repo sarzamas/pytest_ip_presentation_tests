@@ -14,8 +14,7 @@ class Test1:
         """
         return test_data(self.TEST_DIR)
 
-
-    def test_print_ip_addresses(self, current_test_data, print_ip_decimal, print_ip_08b):
+    def test_print_ip_addresses(self, current_test_data):
         """
         Тест преобразования IP-адреса в двоичный формат и вывода результата
             1. Вывод по строкам:
@@ -27,7 +26,9 @@ class Test1:
             10        1         1         1
             00001010  00000001  00000001  00000001
         """
-        ip_pool = current_test_data['ip_pool']
-        for ip in ip_pool:
-            print_ip_decimal(ip)
-            print_ip_08b(ip)
+        ip_objects = current_test_data['origin_objects']
+        linesep = current_test_data['linesep']
+        for el in ip_objects:
+            print(linesep, f'IP: {el.ip}')
+            print(el.ip_decimal_padding)
+            print(el.ip_08b_padding)

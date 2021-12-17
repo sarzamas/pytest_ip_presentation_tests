@@ -48,26 +48,6 @@ def preconditions_teardown():
 
 
 @pytest.fixture(scope='class')
-def print_ip_decimal():
-    """ Фикстура печати IP-адреса в десятичном формате """
-
-    def _print_ip_decimal(ip):
-        print(os.linesep, f'IP: {ip}')
-        print("".join(list(map(lambda x: x.ljust(10), ip.split('.')))))
-
-    return _print_ip_decimal
-
-
-@pytest.fixture(scope='class')
-def print_ip_08b():
-    """ Фикстура печати IP-адреса в двоичном формате """
-
-    def _print_ip_08b(ip):
-        print("".join(list(map(lambda x: x.ljust(10), transform_ip(ip)))))
-    return _print_ip_08b
-
-
-@pytest.fixture(scope='class')
 def is_ip_accessible():
     """ Фикстура проверки доступности IP-адреса """
 
@@ -138,16 +118,6 @@ def is_valid_ipv4_address(address: str) -> bool:
     except socket.error:
         return False
     return True
-
-
-def transform_ip(ip: str) -> list:
-    """
-    Метод преобразования IP-адреса из dotted decimal в двоичный формат с паддингом до байта
-    :param ip: IPv4 адрес в dotted decimal представлении '0.0.0.0'
-    :return: list
-    """
-    ip_08b = [format(int(x), '08b') for x in ip.split('.')]
-    return ip_08b
 
 
 def flatten(list_of_lists: list) -> list:

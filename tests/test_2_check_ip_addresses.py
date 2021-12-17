@@ -5,7 +5,6 @@ import pytest
 class Test2:
     TEST_DIR = 'check_ips'  # имя директории внутри ASSETS в которой находятся файл(ы) с тестовыми данными этого класса
 
-
     @pytest.fixture(scope='class')
     def current_test_data(self, test_data):
         """
@@ -14,7 +13,6 @@ class Test2:
         :return: параметризированный результат выполнения базовой фикстуры
         """
         return test_data(self.TEST_DIR)
-
 
     def test_check_ip_addresses(self, current_test_data, is_ip_accessible):
         """
@@ -28,5 +26,5 @@ class Test2:
         for ip in ip_pool:
             accessible_ips.append(ip) if is_ip_accessible(ip) else un_accessible_ips.append(ip)
 
-        print(f'{linesep}СПИСОК №1: {linesep}Доступные IP-адреса:',  accessible_ips)
-        print(f'{linesep}СПИСОК №2: {linesep}Недоступные IP-адреса:',  un_accessible_ips)
+        print(f'{linesep}СПИСОК №1: {linesep}Доступные IP-адреса:', accessible_ips)
+        print(f'{linesep}СПИСОК №2: {linesep}Недоступные IP-адреса:', un_accessible_ips)
