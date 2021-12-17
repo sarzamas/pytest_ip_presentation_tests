@@ -42,6 +42,6 @@ def purge_local_dir(dir_path: Union[str, bytes]):
             abs_path = os.path.join(dir_path, elem)
             try:
                 os.remove(abs_path)  # remove file
-            except (IsADirectoryError, PermissionError):
+            except (IsADirectoryError, PermissionError, FileNotFoundError):
                 purge_local_dir(abs_path)  # recursive call
                 os.rmdir(abs_path)  # remove directory
